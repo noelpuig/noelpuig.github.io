@@ -12,7 +12,7 @@
     --alloy-orange: #C36122ff;  
     --seal-brown: #512403ff;
 
-    --gradient: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+    --gradient-dark: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
     --gradient: linear-gradient(64deg, var(--seal-brown), rgb(119, 61, 19) 50%, var(--seal-brown));
 }
 
