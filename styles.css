@@ -33,18 +33,16 @@ p {
     line-height: 1rem;
 }
 
-.scroll {
-    margin-bottom: 0.5rem;
-    position: absolute;
-    bottom: 150px;
-    left: 0; 
-    right: 0; 
-    margin-left: auto; 
-    margin-right: auto; 
+h2 {
+    font-size: 20px;
 }
 
-.scroll-text {
-    line-height: 0.75rem;
+.title {
+    margin-top: 200px;
+}
+
+.main-text {
+    font-family: "Cascadia Code", monospace;
 }
 
 .separator-title {
@@ -86,6 +84,8 @@ p {
     transition: 300ms;
     padding: 0px;
     text-align:center;
+    justify-content: center;
+    vertical-align: middle;
 }
 /*
 .button-theme-color:hover { 
@@ -104,24 +104,74 @@ p {
     display: grid;
     grid-auto-flow: column;
     gap: 0.3rem;
+    transition: grid-template-columns 0.5s;
+    transition: gap 0.5s;
 }
 
-@media (min-width:700px) and (max-width: 900px) {
+.scroll {
+    margin-bottom: 0.5rem;
+    position: absolute;
+    bottom: 150px;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    opacity: 1; 
+    transition: bottom 0.5s;
+}
+
+.scroll-text {
+    line-height: 0.75rem;
+}
+
+.name {
+    margin-top: 105px;
+    transition: margin-top 0.5s;
+    transition: position 0.5s;
+}
+
+@media (max-width: 650px) or (max-height:700px) {
+    .name {
+        margin-top: 0;
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        text-justify: right;
+    }
+}
+
+@media (min-width:1100px) {
     .grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-@media (min-width: 500px) and (max-width: 700px) {
+@media (min-width: 650px) and (max-width: 1100px) {
     .grid { 
         grid-template-columns: repeat(3, 1fr); 
         gap: 0px;
     }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 650px) {
     .grid { 
         grid-auto-flow: row;
         grid-template-columns: 1fr; 
         gap: 1rem;
         bottom: -231px;
     }
+    .scroll {
+        bottom: 100px;
+    }
 }
+
+.moon-container {
+    position: absolute;
+    cursor: pointer;
+    left: 15px;
+    top: 15px;
+}
+
+
+.try-me {
+    margin: 0;
+}
+

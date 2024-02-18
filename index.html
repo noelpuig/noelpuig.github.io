@@ -6,43 +6,72 @@
     <link rel="stylesheet" type="text/css" href="shapes.css" />
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>This is my personal portfolio</p>
-    <div class="scroll">
+    <div class="moon-container" role="button" onclick="alert('clicked');">
+        <li class="moon"></li>
+        <p class="main-text try-me"> Try me!!</p>
+    </div>    
+    <h1 class="title">Hello World!</h1>
+    <h2>This is my personal portfolio</h2>
+    <div class="name">
+        <p>Noel Puig</p>
+        <p>Programmer</p>
+    </div>
+    <div class="scroll" id="scroll">
         <p class="scroll-text">
             Scroll<br><br>
-            ˅<br>
-            ˅<br>
+            &#709;<br>
+            &#709;<br>
         </p>
     </div>
     <div class="grid">
         <button class="button-theme" role="button">
             <div class="button-theme-color">
-                <p>
-                    About me
+                <p class="main-text">
+                    Projects
                 </p>
             </div>
         </button>
         <button class="button-theme" role="button">
             <div class="button-theme-color">
-                <p>
+                <p class="main-text">
                     Contact
                 </p>
             </div>
         </button>
         <button class="button-theme" role="button">
             <div class="button-theme-color">
-                <p>
-                    Projects
+                <p class="main-text">
+                    About me
                 </p>
             </div>
         </button>
     </div>
-    <li class="cactus-tall" style="top: 100px; right: 35px;"></li>
-    <li class="cactus-short" style="top: 250px; left: 85px;"></li>
-    <li class="cactus-ball" style="top: 400px; right: 152px;"></li>
-    <li class="cactus-short" style="top: 800px; right: 65px;"></li>
-    <li class="cactus-tall" style="top: 950px; left: 105px;"></li>
-    <li class="cactus-ball" style="top: 1400px; right: 212px;"></li>
+    <li class="cactus-short" style="top: 80px; right: 45px;"></li>
+    <li class="cactus-tall" style="top: 320px; right: 35px;"></li>
+    <li class="cactus-short" style="top: 450px; left: 85px;"></li>
+    <li class="cactus-ball" style="top: 800px; left: 65px;"></li>
+    <li class="cactus-tall" style="top: 1250px; right: 105px;"></li>
+    <li class="cactus-short" style="top: 1400px; left: 112px;"></li>
+    <li class="cactus-tall" style="top: 2550px; right: 105px;"></li>
+    <li class="cactus-short" style="top: 3500px; left: 112px;"></li>
 </body>
+<script>
+    /* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar */
+    var prevScrollpos = window.pageYOffset;
+    window.onscroll = function() {
+        const position_start = 0.01
+        const position_end = 0.2
+
+        var currentScrollPos = window.pageYOffset;
+        var height = window.innerHeight;
+        const scrolltext = document.getElementById("scroll")
+        if (currentScrollPos > height * position_start) {
+            var distance_to_disappear = height * position_end;
+            // Calculate the opacity based on the scroll position
+            var opacity = 1 - Math.min(1, (currentScrollPos - height * position_end) / (distance_to_disappear - height * position_start));
+            // Apply the opacity to the element
+            scrolltext.style.opacity = opacity;
+        }
+    }
+</script>
 </html>
