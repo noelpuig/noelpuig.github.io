@@ -9,12 +9,17 @@
     --gradient: linear-gradient(64deg,#202020, #070045 50%,#0022ff);
 }
 
+@font-face {
+    font-family: 'Cascadia Code';
+    src: url('font/CascadiaCode.ttf');
+}
+
 body {
     background-color: var(--primary-color);
     justify-content: center;
     text-align: center;
     color: var(--secondary-color);
-    font-family: "Cascadia Code",Consolas,Monaco,"Andale Mono","Ubuntu Mono",monospace;
+    font-family: "Cascadia Code", monospace;
 }
 
 p {
