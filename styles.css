@@ -98,12 +98,6 @@ h2 {
     background: var(--sunset);
 }
 
-.shape {
-    transform: scale(0.85);
-	position: absolute;
-    z-index:-1;
-}
-
 .grid {
     position: absolute;
     left: 0; 
