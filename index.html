@@ -5,10 +5,22 @@
     <meta charset="UTF-16">
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <link rel="stylesheet" type="text/css" href="shapes.css" />
+    <script>
+        function changeTheme () {
+            icon = document.getElementById("theme-icon");
+            if (icon.getAttribute('value') == 'light') {
+                alert('d');
+                icon.className = "sun";
+                icon.value = 'dark';
+            } else {
+
+            }
+        }
+    </script>
 </head>
 <body>
-    <div class="moon-container" role="button" onclick="alert('clicked');">
-        <li class="moon"></li>
+    <div class="moon-container" role="button" onclick="changeTheme ()">
+        <li class="moon" id="theme-icon" value="light"></li>
         <p class="main-text try-me"> Try me!!</p>
     </div>    
     <h1 class="title">Hello World!</h1>
@@ -74,5 +86,6 @@
             scrolltext.style.opacity = opacity;
         }
     }
+
 </script>
 </html>

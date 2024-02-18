@@ -29,9 +29,18 @@
 }
 
 .moon {
-	list-style-image: url('data:image/svg+xml,<svg transform="scale(0.5) translate(0, 10)" transform-origin="center" width="70" height="73" viewBox="0 0 70 73" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.9849 55.0315C30.839 55.0315 43.6913 42.6602 43.6913 27.3994C43.6913 15.4716 35.8398 5.30888 24.8402 1.43883C27.5932 0.763327 30.471 0.40509 33.4323 0.40509C53.2778 0.40509 69.3658 16.493 69.3658 36.3385C69.3658 56.184 53.2778 72.272 33.4323 72.272C18.9792 72.272 6.51908 63.739 0.81488 51.436C4.99555 53.7245 9.83163 55.0315 14.9849 55.0315Z" fill="%23473424"/></svg>');/* Use translate(X, Y) to position the SVG up, down, left, and right */
+	list-style-image: url('data:image/svg+xml,<svg transform="scale(0.5) translate(0, 10)" transform-origin="center" width="70" height="73" viewBox="0 0 70 73" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.9849 55.0315C30.839 55.0315 43.6913 42.6602 43.6913 27.3994C43.6913 15.4716 35.8398 5.30888 24.8402 1.43883C27.5932 0.763327 30.471 0.40509 33.4323 0.40509C53.2778 0.40509 69.3658 16.493 69.3658 36.3385C69.3658 56.184 53.2778 72.272 33.4323 72.272C18.9792 72.272 6.51908 63.739 0.81488 51.436C4.99555 53.7245 9.83163 55.0315 14.9849 55.0315Z" fill="%23473424"/></svg>');
+    transition: list-style-image 0.5s;
 }
 
-.moon ::marker{
+.moon::marker{
 	margin: 0;
+}
+
+.sun {
+	list-style-image: url('data:image/svg+xml,<svg transform="scale(0.5) translate(0, 10)" transform-origin="center" width="111" height="110" viewBox="0 0 111 110" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="55.5" cy="55.5" r="27.5" fill="%23473424"/><path d="M91 55H107" stroke="%23473424" stroke-width="7" stroke-linecap="round"/><path d="M4 55H20" stroke="%23473424" stroke-width="7" stroke-linecap="round"/><path d="M80.6023 29.8977L91.916 18.584" stroke="%23473424" stroke-width="7" stroke-linecap="round"/><path d="M19.084 91.416L30.3977 80.1023" stroke="%23473424" stroke-width="7" stroke-linecap="round"/><path d="M55.5 19.5V3.5" stroke="%23473424" stroke-width="7" stroke-linecap="round"/><path d="M55.5 106.5V90.5" stroke="%23473424" stroke-width="7" stroke-linecap="round"/><path d="M30.3977 29.8977L19.084 18.584" stroke="%23473424" stroke-width="7" stroke-linecap="round"/><path d="M91.916 91.416L80.6023 80.1023" stroke="%23473424" stroke-width="7" stroke-linecap="round"/></svg>');/* Use translate(X, Y) to position the SVG up, down, left, and right */
+    transition: list-style-image 0.5s;
+}
+.sun::marker {
+    margin:0;
 }
