@@ -1,6 +1,6 @@
 :root {
     --primary-color: #FAD5A5;
-    --primary-color-light: #FDC579;
+    --primary-color-light: #ffe2bb ;
     --primary-color-dark: #E59C4E;
 
     --secondary-color: #111111;
@@ -35,6 +35,8 @@ p {
 
 h2 {
     font-size: 20px;
+    font-weight: normal;
+    transition: font-size 0.5s;
 }
 
 .title {
@@ -87,10 +89,14 @@ h2 {
     justify-content: center;
     vertical-align: middle;
 }
-/*
+
 .button-theme-color:hover { 
     background: var(--primary-color-light);
-}*/ 
+} 
+
+.button-theme-color:active {
+    background: var(--sunset);
+}
 
 .grid {
     position: absolute;
@@ -124,14 +130,18 @@ h2 {
     line-height: 0.75rem;
 }
 
-.name {
+.me {
     margin-top: 105px;
     transition: margin-top 0.5s;
     transition: position 0.5s;
 }
 
+.name {
+    font-weight:bolder;
+}
+
 @media (max-width: 650px) or (max-height:700px) {
-    .name {
+    .me {
         margin-top: 0;
         position: absolute;
         right: 15px;
@@ -142,6 +152,10 @@ h2 {
 
 @media (min-width:1100px) {
     .grid { grid-template-columns: repeat(3, 1fr); }
+    .mobile-hide {
+        transition: opacity 0.5s;
+        opacity: 100%;
+    }
 }
 
 @media (min-width: 650px) and (max-width: 1100px) {
@@ -149,8 +163,13 @@ h2 {
         grid-template-columns: repeat(3, 1fr); 
         gap: 0px;
     }
+    .mobile-hide {
+        transition: opacity 0.5s;
+        opacity: 100%;
+    }
 }
 
+/* Mobile */
 @media (max-width: 650px) {
     .grid { 
         grid-auto-flow: row;
@@ -158,8 +177,15 @@ h2 {
         gap: 1rem;
         bottom: -231px;
     }
+    .mobile-hide {
+        transition: opacity 0.5s;
+        opacity: 0;
+    }
     .scroll {
         bottom: 100px;
+    }
+    h2 {
+        font-size: 16px;
     }
 }
 
