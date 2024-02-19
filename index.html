@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+s<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,11 +9,11 @@
         function changeTheme () {
             icon = document.getElementById("theme-icon");
             if (icon.getAttribute('value') == 'light') {
-                alert('d');
                 icon.className = "sun";
-                icon.value = 'dark';
+                icon.setAttribute("value","dark");
             } else {
-
+		icon.className = "moon";
+                icon.setAttribute("value","light");
             }
         }
     </script>
