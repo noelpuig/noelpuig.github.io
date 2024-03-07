@@ -95,7 +95,7 @@ h2 {
     z-index: 0;
     background-color: rgb(23, 23, 23);
     display: block;
-    image-rendering: pixelated;
+    /*image-rendering: pixelated;*/
 }
 
 .click-listener {
@@ -104,3 +104,22 @@ h2 {
     cursor: none;
 }
 
+.animation-info {
+    position: absolute;
+    right: 15px;
+    bottom: 100px;
+    color: #fff;
+    z-index: 1;
+}
+
+.main-bottom {
+    position: absolute;
+    user-select: none;
+    font-size: 19px;
+    width: 100%;
+    bottom: 0px;
+}
+
+.inline-icon {
+    display: inline-block;
+}

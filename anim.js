@@ -1,5 +1,5 @@
 const canvas = document.getElementById("animation");
-const ctx = canvas.getContext("2d");
+const ctx = canvas.getContext("2d", { alpha: false });
 const click_containter = document.getElementById("click-listener");
 
 var mouse_down_position = [];
@@ -60,7 +60,7 @@ class Particle {
         }
         this.frame++;
 
-        if (this.frame > 30) {
+        if (this.frame > 30 && ( this.type == "main")) {
             for (let i = 0; i < colliders.length; i++) {
                 let collider = colliders[i];
                 if (collider.type == "circle") {
@@ -75,16 +75,29 @@ class Particle {
                     }
                 }
             }
-
-            if (totalVel < 0.01) {
-                this.todissapear--;
-            } else {
-                this.todissapear = lifespan_stationary * fps;
-            }
-            if (this.type == "main") {
-                console.log("todiss: " + this.todissapear + ", totalvel: " + totalVel);
-            }
-        }        
+            particles.forEach(particle => {
+                if (particle != this && particle.type == "main") {
+                    let dist_vector = [particle.x - this.x, particle.y - this.y];
+                    let dist = Math.sqrt(dist_vector[0]**2 + dist_vector[1]**2);
+                    if (dist < 15) {
+                        let unit_vector = [dist_vector[0] / dist, dist_vector[1] /dist];
+                        this.velX *= -unit_vector[0];
+                        this.velY *= -unit_vector[1];
+                        this.velX += particle.velX;
+                        this.velY += particle.velY;
+                    }
+                }
+            });
+        }    
+        if (totalVel < 0.1) {
+            this.todissapear--;
+        } else {
+            this.todissapear = lifespan_stationary * fps;
+        }
+        this.velX = Math.trunc(this.velX * 10000) / 10000;
+        this.velY = Math.trunc(this.velY * 10000) / 10000;
+        this.x = Math.trunc(this.x * 10000) / 10000;
+        this.y = Math.trunc(this.y * 10000) / 10000;
     }
 }
 
@@ -112,6 +125,10 @@ class Collider {
         this.velY = y - this.y;
         this.x = x;
         this.y = y; 
+        this.velX = Math.trunc(this.velX * 100) / 100;
+        this.velY = Math.trunc(this.velY * 100) / 100;
+        this.x = Math.trunc(this.x * 100) / 100;
+        this.y = Math.trunc(this.y * 100) / 100;
     }
 }
 
@@ -120,7 +137,7 @@ function drawCircle(x, y, scale, color) {
     if (scale < 0.5) scale = 0.5;
     ctx.beginPath();
     ctx.fillStyle = color; // Fill color
-    ctx.arc(x, y, scale, 0, 2 * Math.PI, false);
+    ctx.arc(Math.trunc(x), Math.trunc(y), Math.trunc(scale), 0, 2 * Math.PI, false);
     ctx.fill();
     ctx.closePath();
 }
