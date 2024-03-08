@@ -9,7 +9,7 @@ var colliders = [];
 
 var animation;
 var animation_running = 0;
-const lifespan_stationary = 0.5;
+const lifespan_stationary = 0.1;
 const fps = 60;
 
 class Particle {
@@ -144,6 +144,7 @@ function drawCircle(x, y, scale, color) {
 }
 
 function newFrame () {
+    console.log(particles.length);
     if (particles.length == 0) {
         clearInterval(animation);
         animation_running = 0;

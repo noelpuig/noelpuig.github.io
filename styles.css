@@ -77,20 +77,41 @@ h2 {
 
 .section-title {
     margin-left: 25px;
-    margin-top: 55px;
+    margin-top: 70px;
+    margin-bottom: 35px;
 }
 
 .section-text {
     display: block;
-    margin-left: 45px;
-    margin-right: ;
+    margin: 10px;
     width: auto;
     text-align: justify;
+}
+
+.image-right {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-left: auto;
+    width: 300px;
+    height: auto; 
+}
+
+.center {
+    display: flex;
+    align-items: center;
 }
 
 .section {
     margin: 0;
     width: 100%;
+}
+
+.section-grid {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    grid-template-columns: 50% 50%;
 }
 
 .animation {
