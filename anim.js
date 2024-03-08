@@ -1,6 +1,7 @@
 const canvas = document.getElementById("animation");
 const ctx = canvas.getContext("2d", { alpha: false });
 const click_containter = document.getElementById("click-listener");
+const background_color = "#111111";
 
 var mouse_down_position = [];
 var particles = [];
@@ -155,7 +156,8 @@ function newFrame () {
 }
 
 function drawFrame (clear) {
-    if (clear) ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = background_color;
+    if (clear) ctx.fillRect(0, 0, canvas.width, canvas.height);
     particles.forEach(particle => {
         drawCircle(particle.x, particle.y, particle.scale, particle.color);
     });
@@ -164,17 +166,12 @@ function drawFrame (clear) {
     });
 }
 
-const maxRadius = 90; // Maximum radius for the circular lin
+const maxRadius = 90;
 function getEnd (e) {
-    // Calculate the distance from the starting point to the current mouse position
     let distX = e.pageX - mouse_down_position[0];
     let distY = e.pageY - mouse_down_position[1];
-    let distance = Math.sqrt(distX ** 2 + distY ** 2); // Euclidean distance
-
-    // Limit the distance to the maximum radius
+    let distance = Math.sqrt(distX ** 2 + distY ** 2);
     let limitedDistance = Math.min(distance, maxRadius);
-
-    // Calculate the adjusted coordinates for the line end
     let endX = mouse_down_position[0] + (limitedDistance * (distX / distance));
     let endY = mouse_down_position[1] + (limitedDistance * (distY / distance));
     
@@ -182,7 +179,8 @@ function getEnd (e) {
 }
 
 function newLine(e) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = background_color;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     drawFrame(true);
     ctx.beginPath();
     ctx.moveTo(mouse_down_position[0], mouse_down_position[1]);
@@ -197,7 +195,8 @@ click_containter.addEventListener('mousemove', customPointer, true);
 var mouseCollider = new Collider(-100, -100, 15, 15, "circle" , "#efefef");
 colliders.push(mouseCollider);
 function customPointer (e) {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = background_color;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
     drawFrame(false);
     // Change this to velocity
     mouseCollider.newPos(e.pageX, e.pageY);
