@@ -54,15 +54,21 @@
             </div>
             <div class="center">
                 <img class="image-right" src="source/me.png" alt="(Image of me)">
+                <l style="display: block;">(Placeholder, this is not me)</l>
             </div>
         </grid>
-    </div>
-    <div class="section-divider"></div>
-    <div class="section">
+    </div>54
+    <div class="section-divider"> </div>
+    <div class="section contact-section">
         <grid class="section-grid">
-            <div class="center">
-                <img class="image-right" src="source/me.png" alt="(Image of me)">
-            </div>
+            <form class="contact-form" action="http://formspree.io/you@email.com">
+                <l class="form-title">Contact me!</l>
+                <l class="form-name">Email:</l>
+                <input type="email" name="_replyto">
+                <l class="form-name">Body:</l>
+                <textarea name="body"></textarea>
+                <input type="submit" value="Send">
+            </form>
             <div>
                 <h2 class="section-title" id="contact">Contact</h2>
                 <l class="section-text">
@@ -85,6 +91,33 @@
                     vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
                 </l>
             </div>
+        </grid>
+    </div>
+    <div class="section-divider-full" style="background-color: #fff; height: 50px;"> </div>
+    <div class="section-divider-full" style="height: 50px;"> </div>
+    <div class="section project-section" style="background-color: #222;">
+        <h2 class="section-title projects-title" id="projects">Projects</h2>
+        <grid class="projects-grid">
+            <button class="project-button">
+                <l class="project-name">
+                    Websites
+                </l> 
+            </button>
+            <button class="project-button">
+                <l class="project-name">
+                    JavaScript Canvas
+                </l> 
+            </button>
+            <button class="project-button">
+                <l class="project-name">
+                    Python
+                </l> 
+            </button>
+            <button class="project-button">
+                <l class="project-name">
+                    C
+                </l> 
+            </button>
         </grid>
     </div>
     <script src="anim.js"></script>
