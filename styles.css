@@ -9,7 +9,7 @@ body {
     margin-top: 0;
     height: 98vh;
     width: 100%;
-    z-index: -1;
+    z-index: -2;
     background-color: #111111;
 }
 
@@ -135,23 +135,37 @@ h2 {
     width: 100%;
     height: 100%;
     z-index: 0;
-    background-color: #111111;
+    background-color: none;
     display: block;
     /*image-rendering: pixelated;*/
+}
+
+.animation-loading {
+    position: absolute;
+    display: block;
+    right: 35vw;
+    bottom: 40vh;
+    color: #fff;
+    z-index: 0;
+    user-select: none;
 }
 
 .click-listener {
     opacity: 0;
     z-index: 2;
-    cursor: none;
+    cursor: wait;
 }
 
 .animation-info {
     position: absolute;
-    right: 15px;
-    bottom: 100px;
+    display: block;
+    right: 30vw;
+    bottom: 40vh;
     color: #fff;
     z-index: 1;
+    user-select: none;
+    opacity: 0%;
+    transition: opacity 0.5s;
 }
 
 .main-bottom {

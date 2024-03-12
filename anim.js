@@ -1,6 +1,7 @@
 const canvas = document.getElementById("animation");
 const ctx = canvas.getContext("2d", { alpha: false });
 const click_containter = document.getElementById("click-listener");
+const instructions = document.getElementById("animation-info");
 const background_color = "#111111";
 
 var mouse_down_position = [];
@@ -144,7 +145,7 @@ function drawCircle(x, y, scale, color) {
 }
 
 function newFrame () {
-    console.log(particles.length);
+    console.log("[DEBUG] Ammount of particles: " + particles.length);
     if (particles.length == 0) {
         clearInterval(animation);
         animation_running = 0;
@@ -222,6 +223,8 @@ function mouseUp (e) {
         animation = setInterval(newFrame, 1000/fps);
         animation_running = 1;
     }
+
+    instructions.style.opacity = "0%";
 }
 
 const container = document.getElementById("main-page");
@@ -230,6 +233,9 @@ function resize () {
     let h = container.offsetHeight;
     canvas.width = w;
     canvas.height = h;
+    drawFrame(true);
+    click_containter.style.cursor = "none";
+    instructions.style.opacity = "100%";
 }
 window.addEventListener("resize", resize, false);
 window.addEventListener("load", resize, false);
